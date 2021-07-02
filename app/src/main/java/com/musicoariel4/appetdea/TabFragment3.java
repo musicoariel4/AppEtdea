@@ -21,7 +21,14 @@ import android.widget.Toast;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
+import com.google.android.exoplayer2.Renderer;
+import com.google.android.exoplayer2.RenderersFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.audio.MediaCodecAudioRenderer;
+import com.google.android.exoplayer2.extractor.Extractor;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.extractor.mp4.Mp4Extractor;
+import com.google.android.exoplayer2.mediacodec.MediaCodecSelector;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.MimeTypes;
@@ -89,7 +96,11 @@ public class TabFragment3 extends Fragment {
    public void initializePlayer() {
        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,paises);
        lv1.setAdapter(adapter1);
-       player3 = new SimpleExoPlayer.Builder(getContext()).build();
+
+       ExtractorsFactory mp4ExtractorFactory =
+               () -> new Extractor[] {new Mp4Extractor()};
+
+       player3 = new SimpleExoPlayer.Builder(getContext(), mp4ExtractorFactory).build();
        playerView3.setPlayer(player3);
 
        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -101,7 +112,8 @@ public class TabFragment3 extends Fragment {
                        new MediaItem.Builder()
                                .setUri(habitantes[i])
                                .setMimeType(MimeTypes.APPLICATION_MP4)
-                             //  .setLiveMaxPlaybackSpeed(1.02f)
+                            //  .setLiveMinPlaybackSpeed(1.0F)
+                            //  .setLiveMaxPlaybackSpeed(1.0f)
                                .build();
         player3.setMediaItem(mediaItem);
 

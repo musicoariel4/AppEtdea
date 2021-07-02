@@ -20,7 +20,12 @@ import com.google.android.exoplayer2.DefaultLivePlaybackSpeedControl;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
+import com.google.android.exoplayer2.Renderer;
+import com.google.android.exoplayer2.RenderersFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.audio.MediaCodecAudioRenderer;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.mediacodec.MediaCodecSelector;
 import com.google.android.exoplayer2.source.DefaultMediaSourceFactory;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
@@ -110,6 +115,12 @@ public class TabFragment2 extends Fragment {
     }
 
     private void initializePlayer() {
+        RenderersFactory audioOnlyRenderersFactory =
+                (handler, videoListener, audioListener, textOutput, metadataOutput)
+                        -> new Renderer[] {
+                        new MediaCodecAudioRenderer(
+                                getContext(), MediaCodecSelector.DEFAULT, handler, audioListener)
+                };
 
         if (player == null) {
             DefaultTrackSelector trackSelector = new DefaultTrackSelector(getContext());
@@ -119,15 +130,13 @@ public class TabFragment2 extends Fragment {
                             .buildUponParameters()
                             .setMaxVideoSizeSd()
                            );
-            player = new SimpleExoPlayer.Builder(getContext())
-                    /*.setLivePlaybackSpeedControl(
-                            new DefaultLivePlaybackSpeedControl.Builder()
-                                    .setFallbackMaxPlaybackSpeed(1.04f)
-                                    .build())*/
-                    .setTrackSelector(trackSelector)
-                    .build();
+
+          player =  new SimpleExoPlayer.Builder(getContext())
+                            .setMediaSourceFactory(
+                                    new DefaultMediaSourceFactory(getContext()).setLiveTargetOffsetMs(5000))
+                            .build();
         }
-        //player = new SimpleExoPlayer.Builder(getContext()).build();
+
 
 
         playerView.setPlayer(player);
@@ -135,12 +144,10 @@ public class TabFragment2 extends Fragment {
 
         MediaItem mediaItem = new MediaItem.Builder()
                 .setUri(getString(R.string.media_url_dash))
-                //.setMimeType(MimeTypes.APPLICATION_MPD)
                 .setMimeType(MimeTypes.APPLICATION_M3U8)
-                //   .setLiveMinPlaybackSpeed(1.0F)
-                // .setLiveMaxPlaybackSpeed(1.0f)
                 .setLiveMaxPlaybackSpeed(1.02f)
                 .build();
+
         player.setMediaItem(mediaItem);
 
 

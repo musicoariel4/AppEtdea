@@ -16,7 +16,11 @@ import android.widget.ImageView;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
+import com.google.android.exoplayer2.Renderer;
+import com.google.android.exoplayer2.RenderersFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.audio.MediaCodecAudioRenderer;
+import com.google.android.exoplayer2.mediacodec.MediaCodecSelector;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.ui.PlayerView;
@@ -65,7 +69,14 @@ public class TabFragment1 extends Fragment {
 
 
     private void initializePlayer() {
-        player1 = new SimpleExoPlayer.Builder(getContext()).build();
+        RenderersFactory audioOnlyRenderersFactory =
+                (handler, videoListener, audioListener, textOutput, metadataOutput)
+                        -> new Renderer[] {
+                        new MediaCodecAudioRenderer(
+                                getContext(), MediaCodecSelector.DEFAULT, handler, audioListener)
+                };
+         player1 = new SimpleExoPlayer.Builder(getContext(), audioOnlyRenderersFactory).build();
+       // player1 = new SimpleExoPlayer.Builder(getContext()).build();
         playerView1.setPlayer(player1);
 
         MediaItem mediaItem = MediaItem.fromUri(getString(R.string.media_url_Etadea));
