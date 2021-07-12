@@ -50,13 +50,13 @@ public class TabFragment3 extends Fragment {
     private GridView lv1;
     private String[] paises = {"Sonora Mantacera", "Rafael", "Sandro", "Guillermo Buitrago",
             "Los angeles Negros", "BobyCruz", "Leonardo Fabio"};
-    private String[] habitantes = {"http://eduvision.com.co/wp-content/uploads/2020/07/MOMENTOS-DE-BOHEMIA-SONORA-MATANCERA.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/07/momentosdebohemia_3.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/12/MOMENTOS-DE-BOHEMIA-SANDRO-DE-AMERICA.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/12/MOMENTOSDEBOHEMIAGUILLERMOBUITRAGO.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/09/vMOMENTOS-DE-BOHEMIA-LOS-ÀNGELES-NEGROS.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/09/MOMENTOS-DE-BOHEMIA-RICHIE-RAY-&-BOBBY-CRUZ.mp4",
-            "http://eduvision.com.co/wp-content/uploads/2020/06/MOMENTOS-DE-BOHEMIA_leonardo-1.mp4"};
+    private String[] habitantes = {"https://eduvision.com.co/wp-content/uploads/2020/07/MOMENTOS-DE-BOHEMIA-SONORA-MATANCERA.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/07/momentosdebohemia_3.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/12/MOMENTOS-DE-BOHEMIA-SANDRO-DE-AMERICA.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/12/MOMENTOSDEBOHEMIAGUILLERMOBUITRAGO.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/09/vMOMENTOS-DE-BOHEMIA-LOS-ÀNGELES-NEGROS.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/09/MOMENTOS-DE-BOHEMIA-RICHIE-RAY-&-BOBBY-CRUZ.mp4",
+            "https://eduvision.com.co/wp-content/uploads/2020/06/MOMENTOS-DE-BOHEMIA_leonardo-1.mp4"};
    private String urlBohemia ="http://eduvision.com.co/wp-content/uploads/2020/07/momentosdebohemia_3.mp4";
    //public String urlBohemia= "";
    public String urlBohemia1="";

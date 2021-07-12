@@ -36,14 +36,21 @@
             android:layout_height="134dp"
             android:layout_below="@+id/imageView3"
             android:orientation="vertical">
-
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_4"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="14sp" />
             <GridView
                 android:id="@+id/list1"
+                android:background="#F8BBD0"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:columnWidth="70dp"
                 android:gravity="center"
-                android:numColumns="2" />
+                android:numColumns="1" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <com.google.android.exoplayer2.ui.PlayerView
