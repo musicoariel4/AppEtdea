@@ -57,7 +57,7 @@ public class TabFragment3 extends Fragment {
             "https://eduvision.com.co/wp-content/uploads/2020/09/vMOMENTOS-DE-BOHEMIA-LOS-ÀNGELES-NEGROS.mp4",
             "https://eduvision.com.co/wp-content/uploads/2020/09/MOMENTOS-DE-BOHEMIA-RICHIE-RAY-&-BOBBY-CRUZ.mp4",
             "https://eduvision.com.co/wp-content/uploads/2020/06/MOMENTOS-DE-BOHEMIA_leonardo-1.mp4"};
-   private String urlBohemia ="http://eduvision.com.co/wp-content/uploads/2020/07/momentosdebohemia_3.mp4";
+   private String urlBohemia ="https://eduvision.com.co/wp-content/uploads/2020/07/momentosdebohemia_3.mp4";
    //public String urlBohemia= "";
    public String urlBohemia1="";
 
