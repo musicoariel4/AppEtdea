@@ -41,7 +41,7 @@ public class TabFragment1 extends Fragment {
     private long playbackPosition = 0;
     private  int centinela = 0;
     private ImageView img_search;
-    String strVowels1 = "http://www.caster.fm/widgets/em_player.php?jsinit=true&uid=546610&t=purple&c=&pop=true";
+
 
     public TabFragment1() {
     }
