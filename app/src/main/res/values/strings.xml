@@ -14,6 +14,6 @@
     <string name="media_url_dash">http://66.240.236.25:1936/eduvision/eduvision/playlist.m3u8</string>
     <string name="media_url_dash2"> https://s3-us-west-2.amazonaws.com/hls-playground/hls.m3u8</string>
     <string name="SonoraEstero">http://shaincast.caster.fm:20792/listen.mp3?authn84314302977e799c77157cf2bc4a71ae</string>
-    <string name="media_url_Etadea">http://shaincast.caster.fm:20959/listen.mp3?authn84314302977e799c77157cf2bc4a71ae</string>
+    <string name="media_url_Etadea">https://storage.googleapis.com/exoplayer-test-media-0/play.mp3</string>
     <string name="media_url_pod">http://eduvision.com.co/wp-content/uploads/2020/07/MOMENTOS-DE-BOHEMIA-SONORA-MATANCERA.mp4</string>
 </resources>
