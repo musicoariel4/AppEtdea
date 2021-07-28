@@ -80,7 +80,13 @@ public class TabFragment1 extends Fragment {
        // player1 = new SimpleExoPlayer.Builder(getContext()).build();
         playerView1.setPlayer(player1);
 
-        MediaItem mediaItem = MediaItem.fromUri(getString(R.string.SonoraEstero));
+     //   MediaItem mediaItem = MediaItem.fromUri(getString(R.string.SonoraEstero));
+        MediaItem mediaItem = new MediaItem.Builder()
+                .setUri(getString(R.string.SonoraEstero))
+                .setMimeType(MimeTypes.AUDIO_MPEG)
+                .setLiveMaxPlaybackSpeed(1.02f)
+                .build();
+
         player1.setMediaItem(mediaItem);
         player1.setPlayWhenReady(playWhenReady);
         player1.seekTo(currentWindow, playbackPosition);

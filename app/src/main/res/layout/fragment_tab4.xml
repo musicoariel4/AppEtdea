@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:lines="1"
     tools:context=".TabFragment4">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/txt1you"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:layout_below="@id/txt1"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:srcCompat="@drawable/eta" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_view1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/imageView1"
+            app:controller_layout_id="@layout/custom_player_control_view" />
 
 
-
-
+    </RelativeLayout>
 </FrameLayout>
